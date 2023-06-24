@@ -34,9 +34,19 @@ function Game() {
     }
   };
 
+  const restartGame = () => {
+    setGameStatus("running");
+    setGuessResults([]);
+  };
+
   return (
     <>
       <GuessResults guessResults={guessResults} answer={answer} />
+      {gameStatus !== "running" && (
+        <button onClick={restartGame} className="restart-btn">
+          Restart the game!
+        </button>
+      )}
       <Form addGuess={addGuess} status={gameStatus} />
       {gameStatus === "won" && <WonBanner numOfTries={guessResults.lenth} />}
       {gameStatus === "lost" && <LostBanner answer={answer} />}

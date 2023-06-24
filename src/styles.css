@@ -195,6 +195,16 @@ h1 {
   padding: 0;
   border: 0;
 }
+.restart-btn {
+  padding: 1rem;
+  background: blue;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-radius: 5px;
+  text-align: center;
+}
 
 /*
   Modal styles
