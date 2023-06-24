@@ -1,20 +1,20 @@
 import React from "react";
 
-function Form() {
+function Form({ addGuess, status }) {
   const [word, setWord] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ word });
-
+    addGuess(word);
     setWord("");
   };
 
   return (
     <>
       <form className="guess-input-wrapper" onSubmit={handleSubmit}>
-        <label htmlFor="guess-input">Enter guess: {word}</label>
+        <label htmlFor="guess-input">Enter guess:</label>
         <input
+          disabled={status !== "running"}
           required={true}
           id="guess-input"
           type="text"
